@@ -1,1 +1,282 @@
-
+[
+  {
+    "question": "Alice, a professional hacker, targeted an organization's cloud services. She infiltrated the targets MSP provider by sending spear-phishing emails and distributed custom-made malware to compromise user accounts and gain remote access to the cloud service. Further, she accessed the target customer profiles with her MSP account, compressed the customer data, and stored them in the MSP. Then, she used this information to launch further attacks on the target organization. Which of the ...
+    "choices": {
+      "A": "Cloud hopper attack",
+      "B": "Cloud cryptojacking",
+      "C": "Cloudborne attack",
+      "D": "Man-in-the-cloud (MITC) attack"
+    },
+    "answer": ["A"]
+  },
+  {
+    "question": "Annie, a cloud security engineer, uses the Docker architecture to employ a client/server model in the application she is working on. She utilizes a component that can process API requests and handle various Docker objects, such as containers, volumes. Images, and networks. What is the component of the Docker architecture used by Annie in the above scenario?",
+    "choices": {
+      "A": "Docker client",
+      "B": "Docker objects",
+      "C": "Docker daemon",
+      "D": "Docker registries"
+    },
+    "answer": ["C"]
+  },
+  {
+    "question": "Steven connected his iPhone to a public computer that had been infected by Clark, an attacker. After establishing the connection with the public computer, Steven enabled iTunes WI-FI sync on the computer so that the device could continue communication with that computer even after being physically disconnected. Now, Clark gains access to Steven’s iPhone through the infected computer and is able to monitor and read all of Steven’s activity on the iPhone, even after the device is out of ...
+    "choices": {
+      "A": "IOS trustjacking",
+      "B": "IOS Jailbreaking",
+      "C": "Exploiting SS7 vulnerability",
+      "D": "Man-in-the-disk attack"
+    },
+    "answer": ["A"]
+  },
+  {
+    "question": "Which of the following information security controls creates an appealing isolated environment for hackers to prevent them from compromising critical targets while simultaneously gathering information about the hacker?",
+    "choices": {
+      "A": "Intrusion detection system",
+      "B": "Honeypot",
+      "C": "Botnet",
+      "D": "Firewall"
+    },
+    "answer": ["B"]
+  },
+  {
+    "question": "What are common files on a web server that can be misconfigured and provide useful Information for a hacker such as verbose error messages?",
+    "choices": {
+      "A": "httpd.conf",
+      "B": "administration.config",
+      "C": "idq.dll",
+      "D": "php.ini"
+    },
+    "answer": ["D"]
+  },
+  {
+    "question": "Infecting a system with malware and using phishing to gain credentials to a system or web application are examples of which phase of the ethical hacking methodology?",
+    "choices": {
+      "A": "Reconnaissance",
+      "B": "Maintaining access",
+      "C": "Scanning",
+      "D": "Gaining access"
+    },
+    "answer": ["D"]
+  },
+  {
+    "question": "Which type of virus can change its own code and then cipher itself multiple times as it replicates?",
+    "choices": {
+      "A": "Stealth virus",
+      "B": "Tunneling virus",
+      "C": "Cavity virus",
+      "D": "Encryption virus"
+    },
+    "answer": ["D"]
+  },
+  {
+    "question": "Clark is a professional hacker. He created and configured multiple domains pointing to the same host to switch quickly between the domains and avoid detection. Identify the behavior of the adversary in the above scenario.",
+    "choices": {
+      "A": "Use of command-line interface",
+      "B": "Data staging",
+      "C": "Unspecified proxy activities",
+      "D": "Use of DNS tunneling"
+    },
+    "answer": ["C"]
+  },
+  {
+    "question": "Bob was recently hired by a medical company after it experienced a major cyber security breach. Many patients are complaining that their personal medical records are fully exposed on the Internet and someone can find them with a simple Google search. Bob's boss is very worried because of regulations that protect those data. Which of the following regulations is mostly violated?",
+    "choices": {
+      "A": "HIPPA/PHI",
+      "B": "PII",
+      "C": "PCIDSS",
+      "D": "ISO 2002"
+    },
+    "answer": ["A"]
+  },
+  {
+    "question": "Wilson, a professional hacker, targets an organization for financial benefit and plans to compromise its systems by sending malicious emails. For this purpose, he uses a tool to track the emails of the target and extracts information such as sender identities, mail servers, sender IP addresses, and sender locations from different public sources. He also checks if an email address was leaked using the haveibeenpwned.com API. Which of the following tools is used by Wilson in the above...
+    "choices": {
+      "A": "Factiva",
+      "B": "Netcraft",
+      "C": "Infoga",
+      "D": "Zoominfo"
+    },
+    "answer": ["C"]
+  },
+  {
+    "question": "Morris, a professional hacker, performed a vulnerability scan on a target organization by sniffing the traffic on the network to identify the active systems, network services, applications, and vulnerabilities. He also obtained the list of the users who are currently accessing the network. What is the type of vulnerability assessment that Morris performed on the target organization?",
+    "choices": {
+      "A": "Internal assessment",
+      "B": "Passive assessment",
+      "C": "External assessment",
+      "D": "Credentialed assessment"
+    },
+    "answer": ["B"]
+  },
+  {
+    "question": "Bob, an attacker, has managed to access a target IoT device. He employed an online tool to gather information related to the model of the IoT device and the certifications granted to it. Which of the following tools did Bob employ to gather the above information?",
+    "choices": {
+      "A": "search.com",
+      "B": "EarthExplorer",
+      "C": "Google image search",
+      "D": "FCC ID search"
+    },
+    "answer": ["D"]
+  },
+  {
+    "question": "Abel, a cloud architect, uses container technology to deploy applications/software including all its dependencies, such as libraries and configuration files, binaries, and other resources that run independently from other processes in the cloud environment. For the containerization of applications, he follows the five-tier container technology architecture. Currently, Abel is verifying and validating image contents, signing images, and sending them to the registries. Which of the followin...
+    "choices": {
+      "A": "Tier-1: Developer machines",
+      "B": "Tier-4: Orchestrators",
+      "C": "Tier-3: Registries",
+      "D": "Tier-2: Testing and accreditation systems"
+    },
+    "answer": ["D"]
+  },
+  {
+    "question": "Which of the following Bluetooth hacking techniques refers to the theft of information from a wireless device through Bluetooth?",
+    "choices": {
+      "A": "Bluesmacking",
+      "B": "Bluebugging",
+      "C": "Bluejacking",
+      "D": "Bluesnarfing"
+    },
+    "answer": ["D"]
+  },
+  {
+    "question": "If you send a TCP ACK segment to a known closed port on a firewall but it does not respond with an RST, what do you know about the firewall you are scanning?",
+    "choices": {
+      "A": "There is no firewall in place.",
+      "B": "This event does not tell you anything about the firewall.",
+      "C": "It is a stateful firewall",
+      "D": "It is a non-stateful firewall."
+    },
+    "answer": ["C"]
+  },
+  {
+    "question": "An organization has automated the operation of critical infrastructure from a remote location. For this purpose, all the industrial control systems are connected to the Internet. To empower the manufacturing process, ensure the reliability of industrial networks, and reduce downtime and service disruption, the organization decided to install an OT security tool that further protects against security incidents such as cyber espionage, zero-day attacks, and malware. Which of the followin...
+    "choices": {
+      "A": "Robotium",
+      "B": "BalenaCloud",
+      "C": "Flowmon",
+      "D": "IntentFuzzer"
+    },
+    "answer": ["C"]
+  },
+  {
+    "question": "Kevin, a professional hacker, wants to penetrate CyberTech Inc.’s network. He employed a technique, using which he encoded packets with Unicode characters. The company’s IDS cannot recognize the packet, but the target web server can decode them. What is the technique used by Kevin to evade the IDS system?",
+    "choices": {
+      "A": "Desynchronization",
+      "B": "Obfuscating",
+      "C": "Session splicing",
+      "D": "Urgency flag"
+    },
+    "answer": ["B"]
+  },
+  {
+    "question": "In the context of Windows Security, what is a 'null' user?",
+    "choices": {
+      "A": "A user that has no skills",
+      "B": "An account that has been suspended by the admin",
+      "C": "A pseudo account that has no username and password",
+      "D": "A pseudo account that was created for security administration purpose"
+    },
+    "answer": ["C"]
+  },
+  {
+    "question": "Harris is attempting to identify the OS running on his target machine. He inspected the initial TTL in the IP header and the related TCP window size and obtained the following results: TTL: 64, Window Size: 5840. What is the OS running on the target machine?",
+    "choices": {
+      "A": "Solaris OS",
+      "B": "Windows OS",
+      "C": "Mac OS",
+      "D": "Linux OS"
+    },
+    "answer": ["D"]
+  },
+  {
+    "question": "In an attempt to increase the security of your network, you implement a solution that will help keep your wireless network undiscoverable and accessible only to those that know it. How do you accomplish this?",
+    "choices": {
+      "A": "Delete the wireless network",
+      "B": "Remove all passwords",
+      "C": "Lock all users",
+      "D": "Disable SSID broadcasting"
+    },
+    "answer": ["D"]
+  },
+  {
+    "question": "Tony is a penetration tester tasked with performing a penetration test. After gaining initial access to a target system, he finds a list of hashed passwords. Which of the following tools would not be useful for cracking the hashed passwords?",
+    "choices": {
+      "A": "John the Ripper",
+      "B": "Hashcat",
+      "C": "netcat",
+      "D": "THC-Hydra"
+    },
+    "answer": ["C"]
+  },
+  {
+    "question": "Jack, a disgruntled ex-employee of Incalsol Ltd., decided to inject fileless malware into Incalsol's systems. To deliver the malware, he used the current employees' email IDs to send fraudulent emails embedded with malicious links that seem to be legitimate. When a victim employee clicks on the link, they are directed to a fraudulent website that automatically loads Flash and triggers the exploit. What is the technique used by Jack to launch the fileless malware on the target systems?",
+    "choices": {
+      "A": "In-memory exploits",
+      "B": "Phishing",
+      "C": "Legitimate applications",
+      "D": "Script-based injection"
+    },
+    "answer": ["B"]
+  },
+  {
+    "question": "Which of the following types of SQL injection attacks extends the results returned by the original query, enabling attackers to run two or more statements if they have the same structure as the original one?",
+    "choices": {
+      "A": "Error-based injection",
+      "B": "Boolean-based blind SQL injection",
+      "C": "Blind SQL injection",
+      "D": "Union SQL injection"
+    },
+    "answer": ["D"]
+  },
+  {
+    "question": "A company’s Web development team has become aware of a certain type of security vulnerability in their Web software. To mitigate the possibility of this vulnerability being exploited, the team wants to modify the software requirements to disallow users from entering HTML as input into their Web application. What kind of Web application vulnerability likely exists in their software?",
+    "choices": {
+      "A": "Cross-site scripting vulnerability",
+      "B": "SQL injection vulnerability",
+      "C": "Website defacement vulnerability",
+      "D": "Cross-site Request Forgery vulnerability"
+    },
+    "answer": ["A"]
+  },
+  {
+    "question": "What does the –oX flag do in an Nmap scan?",
+    "choices": {
+      "A": "Perform an eXpress scan",
+      "B": "Output the results in truncated format to the screen",
+      "C": "Output the results in XML format to a file",
+      "D": "Perform an Xmas scan"
+    },
+    "answer": ["C"]
+  },
+  {
+    "question": "Vlady works in a fishing company where the majority of the employees have very little understanding of IT let alone IT Security. Several information security issues that Vlady often found includes, employees sharing password, writing his/her password on a post it note and stick it to his/her desk, leaving the computer unlocked, didn’t log out from emails or other social media accounts, and etc. After discussing with his boss, Vlady decided to make some changes to improve the security enviro...
+    "choices": {
+      "A": "Warning to those who write password on a post it note and put it on his/her desk",
+      "B": "Developing a strict information security policy",
+      "C": "Information security awareness training",
+      "D": "Conducting a one to one discussion with the other employees about the importance of information security"
+    },
+    "answer": ["C"]
+  },
+  {
+    "question": "Nathan is testing some of his network devices. Nathan is using Macof to try and flood the ARP cache of these switches. If these switches' ARP cache is successfully flooded, what will be the result?",
+    "choices": {
+      "A": "The switches will drop into hub mode if the ARP cache is successfully flooded.",
+      "B": "If the ARP cache is flooded, the switches will drop into pix mode making it less susceptible to attacks.",
+      "C": "Depending on the switch manufacturer, the device will either delete every entry in its ARP cache or reroute packets to the nearest switch.",
+      "D": "The switches will route all traffic to the broadcast address creating collisions."
+    },
+    "answer": ["A"]
+  },
+  {
+    "question": "Mary found a high vulnerability during a vulnerability scan and notified her server team. After analysis, they sent her proof that a fix to that issue had already been applied. The vulnerability that Mary found is called what?",
+    "choices": {
+      "A": "False-negative",
+      "B": "False-positive",
+      "C": "Brute force attack",
+      "D": "Backdoor"
+    },
+    "answer": ["B"]
+  }
+]
