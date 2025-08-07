@@ -31,14 +31,6 @@ def banner():
 """
     print(Fore.LIGHTBLUE_EX + ascii_art + Style.RESET_ALL)
 
-def load_question_bank(filename='ceh_questions.json'):
-    try:
-        with open(filename, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"{Fore.RED}Failed to load question bank: {e}{Style.RESET_ALL}")
-        sys.exit(1)
-
 def loading_animation():
     import itertools
     spinner = itertools.cycle(['|', '/', '-', '\\'])
@@ -73,11 +65,11 @@ def ask_question(qn_num, question, choices, correct_answer):
             choice_index = int(answer) - 1
             if 0 <= choice_index < len(options):
                 selected_key = list(choices.keys())[list(choices.values()).index(options[choice_index][1])]
-                if selected_key in correct_answer:
+                if selected_key.upper() in [ans.upper() for ans in correct_answer]:
                     print(f"{Fore.GREEN}✅ Correct!{Style.RESET_ALL}")
                     return True
                 else:
-                    correct_option = next(v for k, v in choices.items() if k in correct_answer)
+                    correct_option = next(v for k, v in choices.items() if k.upper() in [ans.upper() for ans in correct_answer])
                     print(f"{Fore.RED}❌ Wrong. Correct Answer: {correct_option}{Style.RESET_ALL}")
                     return False
             else:
@@ -103,6 +95,30 @@ def get_user_question_count():
         else:
             print("Please enter 'yes' or 'no'.")
 
+def select_question_bank():
+    clear()
+    banner()
+    print("Choose CEH Question Bank:\n")
+    print("1. CEH Question Bank 1 (ceh_questions.json)")
+    print("2. CEH Question Bank 2 (ceh_questions1.json)\n")
+
+    while True:
+        choice = input("Enter choice [1 or 2]: ").strip()
+        if choice == '1':
+            return "ceh_questions.json"
+        elif choice == '2':
+            return "ceh_questions1.json"
+        else:
+            print("Invalid choice. Please enter 1 or 2.")
+
+def load_question_bank(filename):
+    try:
+        with open(filename, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"{Fore.RED}Failed to load question bank: {e}{Style.RESET_ALL}")
+        sys.exit(1)
+
 def run_quiz(question_pool, num_questions):
     score = 0
     selected = choose_questions(question_pool, num_questions)
@@ -116,9 +132,10 @@ def run_quiz(question_pool, num_questions):
     print("Press Ctrl + C to exit")
 
 def main():
-    internet_check()  # Optional - can be commented out for offline use
+    # internet_check()  # Optional for offline mode
     loading_animation()
-    question_pool = load_question_bank()
+    filename = select_question_bank()
+    question_pool = load_question_bank(filename)
     question_count = get_user_question_count()
     run_quiz(question_pool, question_count)
 
