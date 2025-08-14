@@ -123,6 +123,157 @@ def choose_questions(pool, num):
     return random.sample(pool, min(num, len(pool)))
 
 
+def ask_question(qn_num, total, question, choices, correct_answer, current_score):
+    clear()
+    banner()
+    print(f"{Fore.YELLOW}Question {qn_num} of {total}:{Style.RESET_ALL}\n{question}\n")
+
+    options = list(choices.items())
+    random.shuffle(options)
+    for i, (key, value) in enumerate(options, start=1):
+        print(f"{Fore.CYAN}{i}. {value}{Style.RESET_ALL}")
+
+    while True:
+        answer = input("\nYour answer [1-4] (X to exit): ").strip().upper()
+        if answer == 'X':
+            print("Thanks for playing. Goodbye!")
+            sys.exit()
+        try:
+            idx = int(answer) - 1
+            if 0 <= idx < len(options):
+                selected_key = options[idx][0]
+                is_correct = set([selected_key.upper()]) == set(correct_answer)
+                if is_correct:
+                    print(Fore.GREEN + "Correct ✅" + Style.RESET_ALL)
+                    current_score += 1
+                else:
+                    print(Fore.RED + "Wrong 😔" + Style.RESET_ALL)
+                    print(Fore.YELLOW + f"Correct answer: {', '.join(correct_answer)}" + Style.RESET_ALL)
+
+                # Show live score
+                percent = (current_score / qn_num) * 100
+                pass_mark = compute_pass_threshold(total)
+                print(f"\nScore so far: {current_score}/{qn_num} ({percent:.2f}%)")
+                print(f"Pass mark: {pass_mark} correct ({73.6:.1f}%)\n")
+
+                time.sleep(1.5)  # small pause for readability
+                return is_correct, current_score
+        except ValueError:
+            pass
+        print(Fore.RED + "Invalid input." + Style.RESET_ALL)
+
+
+
+
+def compute_pass_threshold(num_questions):
+    import math
+    CEH_PASS_PERCENT = 73.6
+    return int(math.ceil((CEH_PASS_PERCENT / 100) * num_questions))
+
+
+
+
+def pass_animation():
+    print(Fore.GREEN + "🎉 CONGRATULATIONS! You Passed the CEH Practice Test! 🎉" + Style.RESET_ALL)
+
+
+
+def encouragement():
+    print(Fore.RED + "Don't worry—keep practicing and try again!" + Style.RESET_ALL)
+
+
+def run_quiz(question_pool, num_questions):
+    score = 0
+    selected = choose_questions(question_pool, num_questions)
+    for i, q in enumerate(selected, 1):
+        correct, score = ask_question(i, len(selected), q["question"], q["choices"], q["answer"], score)
+
+    percent = (score / len(selected)) * 100
+    threshold = compute_pass_threshold(len(selected))
+
+    print(f"\n{Fore.MAGENTA}Final Score: {score}/{len(selected)} | {percent:.2f}%{Style.RESET_ALL}")
+    
+    if num_questions == DEFAULT_NUM_QUESTIONS:
+        print(f"Pass mark: {threshold} correct (73.6%)")
+    else:
+        print(f"Pass mark: {threshold} correct")
+
+    if score >= threshold:
+        pass_animation()
+    else:
+        encouragement()
+
+
+
+
+def main():
+    while True:
+        label, filename = main_menu()
+        loading_animation("Loading questions")
+        questions = load_questions(filename)
+        n = ask_question_count()
+        run_quiz(questions, n)
+        choice = input("\nRetry? (y for retry / m for menu / q to quit): ").strip().lower()
+        if choice == 'y':
+            continue
+        elif choice == 'm':
+            continue
+        elif choice == 'q':
+            break
+
+
+if __name__ == "__main__":
+    main()    while True:
+        clear()
+        banner()
+        print(Fore.YELLOW + "Choose CEH Version:" + Style.RESET_ALL)
+        for k, (label, _) in VERSION_FILES.items():
+            print(f" {k}. {label}")
+        choice = input("Select version (1-4) or Q to quit: ").strip()
+        if choice.lower() == "q":
+            sys.exit(0)
+        if choice in VERSION_FILES:
+            return VERSION_FILES[choice]
+
+
+def ask_question_count():
+    clear()
+    banner()
+    raw = input(f"Number of questions (Enter for default {DEFAULT_NUM_QUESTIONS}): ").strip()
+    if not raw:
+        return DEFAULT_NUM_QUESTIONS
+    try:
+        val = int(raw)
+        if val > 0:
+            return val
+    except ValueError:
+        pass
+    print("Invalid number, using default.")
+    time.sleep(1)
+    return DEFAULT_NUM_QUESTIONS
+
+
+def load_questions(file_path):
+    if not os.path.exists(file_path):
+        print(Fore.RED + f"Question file {file_path} not found." + Style.RESET_ALL)
+        sys.exit(1)
+    with open(file_path, 'r', encoding='utf-8') as f:
+        raw = json.load(f)
+    questions = []
+    for item in raw:
+        choices = item.get("choices") or item.get("options")
+        questions.append({
+            "question": item["question"],
+            "choices": choices,
+            "answer": [a.upper() for a in item["answer"]]
+        })
+    return questions
+
+
+def choose_questions(pool, num):
+    return random.sample(pool, min(num, len(pool)))
+
+
 def ask_question(qn_num, total, question, choices, correct_answer):
     clear()
     banner()
@@ -209,4 +360,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
