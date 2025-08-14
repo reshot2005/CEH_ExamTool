@@ -127,10 +127,12 @@ def ask_question(qn_num, total, question, choices, correct_answer):
     clear()
     banner()
     print(f"{Fore.YELLOW}Question {qn_num} of {total}:{Style.RESET_ALL}\n{question}\n")
+
     options = list(choices.items())
     random.shuffle(options)
     for i, (key, value) in enumerate(options, start=1):
         print(f"{Fore.CYAN}{i}. {value}{Style.RESET_ALL}")
+
     while True:
         answer = input("\nYour answer [1-4] (X to exit): ").strip().upper()
         if answer == 'X':
@@ -140,10 +142,17 @@ def ask_question(qn_num, total, question, choices, correct_answer):
             idx = int(answer) - 1
             if 0 <= idx < len(options):
                 selected_key = options[idx][0]
-                return set([selected_key.upper()]) == set(correct_answer)
+                if set([selected_key.upper()]) == set(correct_answer):
+                    print(Fore.GREEN + "Correct ✅" + Style.RESET_ALL)
+                    return True
+                else:
+                    print(Fore.RED + "Wrong  ❌" + Style.RESET_ALL)
+                    print(Fore.YELLOW + f"Correct answer: {', '.join(correct_answer)}" + Style.RESET_ALL)
+                    return False
         except ValueError:
             pass
         print(Fore.RED + "Invalid input." + Style.RESET_ALL)
+
 
 
 def compute_pass_threshold(num_questions):
@@ -200,3 +209,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
