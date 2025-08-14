@@ -22,7 +22,7 @@ A fast, terminal-first **CEH mock test** tool written in Python. Practice timed 
 
 ## 🧰 Tech Stack
 
-- Python 3.9+
+- Python 3.0+
 - Standard library only (optional: `rich` for prettier UI)
 
 ---
