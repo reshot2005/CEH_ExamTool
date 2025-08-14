@@ -34,4 +34,10 @@ git clone https://github.com/reshot2005/CEH_ExamTool.git
 cd CEH_ExamTool
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt 
+pip install -r requirements.txt
+```
+## QUICK START
+```bash
+python CEH_ExamTool.py
+
+```
